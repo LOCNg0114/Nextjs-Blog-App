@@ -27,21 +27,17 @@ export default function Section3() {
                 }}
             >
                 {
-                        data.map((value, index: number) => (
-                            <SwiperSlide key={index}><Post data={value}></Post></SwiperSlide>
-                        ))
+                    data.map((value: any, index: number) => (
+                        <SwiperSlide key={index}><Post data={value}></Post></SwiperSlide>
+                    ))
                 }
             </Swiper>
-
         </section>
     )
 }
 
-
-function Post({ data }){
-
+function Post({ data }: any){
     const { id, title, category, img, description, published, author } = data;
-
     return (
         <div className="grid">
             <div className="images">

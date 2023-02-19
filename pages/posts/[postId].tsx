@@ -9,8 +9,7 @@ import Error from '@/components/child/Error'
 import { useRouter } from 'next/router'
 import { SWRConfig } from 'swr'
 
-export default function Page({ fallback }){
-
+export default function Page({ fallback }: any){
     const router = useRouter()
     const { postId } = router.query;
     const { data, isLoading, isError } = Fetcher(`api/posts/${postId}`)
@@ -26,7 +25,7 @@ export default function Page({ fallback }){
 
 }
 
-function Article({ title, img, subtitle, description, author }){
+function Article({ title, img, subtitle, description, author }: any){
 
     return (
         <Format>
@@ -41,7 +40,7 @@ function Article({ title, img, subtitle, description, author }){
                     <p className='text-gray-500 text-xl text-center'>{subtitle || "No Title"}</p>
 
                     <div className="py-10">
-                        <Image src={img || "/"} width={900} height={600}></Image>
+                        <Image src={img || "/"} width={900} height={600} alt=""></Image>
                     </div>
 
                     <div className="content text-gray-600 text-lg flex flex-col gap-4">
@@ -57,7 +56,7 @@ function Article({ title, img, subtitle, description, author }){
 }
 
 
-export async function getStaticProps( { params } ){
+export async function getStaticProps( { params }: any ){
     const posts = await getPost(params.postId)
 
     return {

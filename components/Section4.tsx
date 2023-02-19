@@ -6,7 +6,6 @@ import Spinner from "./child/Spinner"
 import Error from "./child/Error"
 
 export default function Section4() {
-
     const { data, isLoading, isError } = Fetcher('api/popular')
     
     if(isLoading) return <Spinner></Spinner>;
@@ -37,8 +36,7 @@ export default function Section4() {
     )
 }
 
-function Post({ data }){
-
+function Post({ data }: any){
     const { id, title, category, img, published, author } = data;
 
     return (

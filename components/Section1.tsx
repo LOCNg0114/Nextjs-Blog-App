@@ -48,7 +48,7 @@ export default function Section1() {
     )
 }
 
-function Slide({ data }){
+function Slide({ data }: any){
 
     const { id, title, category, img, published, description ,author } = data;
 

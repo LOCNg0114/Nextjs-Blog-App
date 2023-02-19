@@ -15,9 +15,21 @@ export default function Header() {
             </div>
             <div className="w-96 order-3 flex justify-center">
                 <div className="flex gap-6">
-                    <Link href={"/"} passHref legacyBehavior><a><ImFacebook color="#888888" /></a></Link>
-                    <Link href={"/"} passHref legacyBehavior><a><ImTwitter color="#888888" /></a></Link>                    
-                    <Link href={"/"} passHref legacyBehavior><a><ImYoutube color="#888888" /></a></Link>
+                    <Link href={"/"} passHref legacyBehavior>
+                        <a>
+                            <ImFacebook color="#888888" />
+                        </a>
+                    </Link>
+                    <Link href={"/"} passHref legacyBehavior>
+                        <a>
+                            <ImTwitter color="#888888" />
+                        </a>
+                    </Link>                    
+                    <Link href={"/"} passHref legacyBehavior>
+                        <a>
+                            <ImYoutube color="#888888" />
+                        </a>
+                    </Link>
                 </div>
             </div>
         </div>

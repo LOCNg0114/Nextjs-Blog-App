@@ -21,7 +21,7 @@ export default function Section2() {
             {/* grid columns */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-14">
                 {
-                    data.map((value, index) => (
+                    data.map((value: any, index:number) => (
                         <Post data={value} key={index}></Post>
                     ))
                 }
@@ -31,7 +31,7 @@ export default function Section2() {
 }
 
 
-function Post( { data } ){
+function Post( { data }: any ){
     const { id, title, category, img, published, author } = data;
     return (
         <div className="item">
