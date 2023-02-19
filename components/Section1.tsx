@@ -29,7 +29,6 @@ export default function Section1() {
         <section className="py-16" style={bg}>
             <div className="container mx-auto md:px-20">
                 <h1 className="font-bold text-4xl pb-12 text-center">Trending</h1>
-
                 <Swiper
                     slidesPerView={1}
                     loop={true}
@@ -38,7 +37,7 @@ export default function Section1() {
                     }}
                 >
                     {
-                        data.map((value, index) => (
+                        data.map((value: any, index: number) => (
                             <SwiperSlide key={index}><Slide data={value}></Slide></SwiperSlide>
                         ))
                     }
