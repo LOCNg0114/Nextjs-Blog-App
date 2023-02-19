@@ -70,7 +70,7 @@ export async function getStaticProps( { params }: any ){
 
 export async function getStaticPaths(){
     const posts = await getPost();
-    const paths = posts.map(value => {
+    const paths = posts.map((value: any) => {
         return {
             params : {
                 postId : value.id.toString()

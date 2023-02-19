@@ -18,7 +18,7 @@ export default function Related() {
 
              <div className="flex flex-col gap-10">
                 {
-                    data.map((value, index) => (
+                    data.map((value:any, index: number) => (
                         <Post key={index} data={value}></Post>
                     ))
                 }
@@ -28,10 +28,8 @@ export default function Related() {
 }
 
 
-function Post( {data } ){
-
+function Post( {data }: any ){
     const { id, title, category, img, published, author } = data;
-
     return (
         <div className="flex gap-5">
             <div className="image flex flex-col justify-start">
