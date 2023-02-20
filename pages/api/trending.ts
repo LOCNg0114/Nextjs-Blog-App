@@ -1,6 +1,6 @@
 
 import { NextApiRequest, NextApiResponse } from 'next';
-import data from '../data';
+import data from '../../utils/data';
 
 // api/trending
 export default function handler(req: NextApiRequest, res: NextApiResponse){

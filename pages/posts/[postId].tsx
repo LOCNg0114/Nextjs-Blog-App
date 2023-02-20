@@ -8,6 +8,7 @@ import Spinner from '@/components/child/Spinner'
 import Error from '@/components/child/Error'
 import { useRouter } from 'next/router'
 import { SWRConfig } from 'swr'
+import data from '../../utils/data'
 
 export default function Page({ fallback }: any){
     const router = useRouter()
@@ -57,20 +58,20 @@ function Article({ title, img, subtitle, description, author }: any){
 
 
 export async function getStaticProps( { params }: any ){
-    const posts = await getPost(params.postId)
+    const [post] = data.Posts.filter(post => post.id === Number(params.postId ))
 
     return {
        props : {
             fallback : {
-                '/api/posts' : posts
+                '/api/posts' : post
             }
        }
     }
 }
 
 export async function getStaticPaths(){
-    const posts = await fetch(`${process.env.BASE_URL}/posts`)
-    const paths = (await posts.json() as any[]).map((value: any) => {
+    const posts = data.Posts
+    const paths = posts.map((value: any) => {
         return {
             params : {
                 postId : value.id.toString()

@@ -1,4 +1,4 @@
-import data from "@/pages/data";
+import data from "@/utils/data";
 import { NextApiRequest, NextApiResponse } from "next";
 
 // api/posts/1
