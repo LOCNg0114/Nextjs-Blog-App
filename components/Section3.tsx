@@ -8,7 +8,7 @@ import Error from "./child/Error"
 
 export default function Section3() {
 
-    const { data, isLoading, isError } = Fetcher('api/popular')
+    const { data, isLoading, isError } = Fetcher('/popular')
     
     if(isLoading) return <Spinner></Spinner>;
     if(isError) return <Error></Error>

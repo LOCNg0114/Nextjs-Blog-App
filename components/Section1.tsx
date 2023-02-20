@@ -13,7 +13,7 @@ import Error from "./child/Error";
 
 export default function Section1() {
 
-    const { data, isLoading, isError } = Fetcher('api/trending')
+    const { data, isLoading, isError } = Fetcher('/trending')
     
     if(isLoading) return <Spinner></Spinner>;
     if(isError) return <Error></Error>
