@@ -10,23 +10,23 @@ import { useRouter } from 'next/router'
 import { SWRConfig } from 'swr'
 import data from '../../utils/data'
 
-export default function Page({ fallback }: any){
-    const router = useRouter()
-    const { postId } = router.query;
-    const { data, isLoading, isError } = Fetcher(`api/posts/${postId}`)
+// export default function Page({ fallback }: any){
+//     const router = useRouter()
+//     const { postId } = router.query;
+//     const { data, isLoading, isError } = Fetcher(`api/posts/${postId}`)
 
-    if(isLoading) return <Spinner></Spinner>
-    if(isError) return <Error></Error>
+//     if(isLoading) return <Spinner></Spinner>
+//     if(isError) return <Error></Error>
 
-    return (
-        <SWRConfig value={ { fallback }}>
-            <Article {...data}></Article>
-        </SWRConfig>
-    )
+//     return (
+//         <SWRConfig value={ { fallback }}>
+//             <Article {...data}></Article>
+//         </SWRConfig>
+//     )
 
-}
+// }
 
-function Article({ title, img, subtitle, description, author }: any){
+export default function Article({ title, img, subtitle, description, author }: any){
 
     return (
         <Format>
@@ -62,9 +62,7 @@ export async function getStaticProps( { params }: any ){
 
     return {
        props : {
-            fallback : {
-                '/api/posts' : post
-            }
+            ...post
        }
     }
 }

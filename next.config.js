@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   env:{
-    BASE_URL: "http://localhost:3000/api",
+    BASE_URL: "https://nextjs-blog-app-keuc-mpq9c28s5-locng0114.vercel.app/api",
   }
 }
 
