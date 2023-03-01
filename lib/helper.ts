@@ -1,8 +1,8 @@
-const baseURL = "http://localhost:3000/api/posts";
+
 
 // endpoint: http://localhost:3000/api/posts
 export default async function getPost(id: number){
-    const res = await fetch(`${baseURL}`)
+    const res = await fetch(`${process.env.BASE_URL}/posts`)
     const posts = await res.json()
 
     if(id){

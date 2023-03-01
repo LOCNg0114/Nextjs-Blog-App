@@ -6,7 +6,7 @@ export default function Author({ name, img, designation }: any) {
 
   return (
     <div className="author flex py-5">
-        <Image src={img || ""} width={60} height={60} className="rounded-full" alt="/"></Image>        
+        <Image src={img || ""} width={50} height={50} className="rounded-full h-[50px]" alt="/"></Image>        
         <div className="flex flex-col justify-center px-4">
             <Link href={"/"} legacyBehavior>
                 <a className="text-md font-bold text-gray-800 hover:text-gray-600">
